@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Usage &mdash; Neurotrack 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples" href="examples.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Neurotrack
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#command-line-tools">Command-line tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#simulate-neurons-py">simulate_neurons.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collect-branch-data-py">collect_branch_data.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#classifier-train-py">classifier_train.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sac-train-py">sac_train.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Neurotrack</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Usage</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/usage.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h1>
+<p>Neurotrack currently includes Python command-line tools to simulate neurons, collect branch point data and train a branch point classification model,and train a neuron tracking model.</p>
+<section id="command-line-tools">
+<h2>Command-line tools<a class="headerlink" href="#command-line-tools" title="Link to this heading"></a></h2>
+<section id="simulate-neurons-py">
+<h3>simulate_neurons.py<a class="headerlink" href="#simulate-neurons-py" title="Link to this heading"></a></h3>
+<p>Generates and saves simulated neuron images, either from existing neuron swc files or
+by generating new simulated neuron trees based on the provided parameters.</p>
+<p>To simulate neurons, run the following command from the neurotrack root directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>bin/simulate_neurons<span class="w"> </span>--input<span class="w"> </span>&lt;input_file&gt;
+</pre></div>
+</div>
+<p>The <cite>input</cite> argument is a JSON file listing the following configuration parameters:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>labels_dir<span class="classifier">str, optional</span></dt><dd><p>Directory containing SWC files of existing neuron trees. If not provided, neuron trees will be simulated.</p>
+</dd>
+<dt>out<span class="classifier">str</span></dt><dd><p>Output directory to save the generated neuron images.</p>
+</dd>
+<dt>width<span class="classifier">int</span></dt><dd><p>Width of the generated neuron images in voxels.</p>
+</dd>
+<dt>random_contrast<span class="classifier">bool</span></dt><dd><p>Whether to apply random contrast to the neuron images.</p>
+</dd>
+<dt>dropout<span class="classifier">float</span></dt><dd><p>Density of intensity dropout points for the neuron images.</p>
+</dd>
+<dt>random_brightness<span class="classifier">bool</span></dt><dd><p>Whether to apply random signal to noise ratio to the neuron images.</p>
+</dd>
+<dt>noise<span class="classifier">float</span></dt><dd><p>Amount of noise to add to the neuron images.</p>
+</dd>
+<dt>binary<span class="classifier">bool</span></dt><dd><p>Whether to draw the neuron images as a binary mask.</p>
+</dd>
+<dt>seed<span class="classifier">int</span></dt><dd><p>Seed for the random number generator.</p>
+</dd>
+<dt>count<span class="classifier">int, optional</span></dt><dd><p>Number of neuron trees to simulate. Required if <cite>labels_dir</cite> is not provided.</p>
+</dd>
+<dt>size<span class="classifier">int, optional</span></dt><dd><p>Size of the simulated neuron trees. Required if <cite>labels_dir</cite> is not provided.</p>
+</dd>
+<dt>length<span class="classifier">int, optional</span></dt><dd><p>Length of the simulated neuron trees. Required if <cite>labels_dir</cite> is not provided.</p>
+</dd>
+<dt>stepsize<span class="classifier">float, optional</span></dt><dd><p>Step size for the simulated neuron trees. Required if <cite>labels_dir</cite> is not provided.</p>
+</dd>
+<dt>uniform_len<span class="classifier">bool, optional</span></dt><dd><p>Whether to use uniform length for the simulated neuron trees. Required if <cite>labels_dir</cite> is not provided.</p>
+</dd>
+<dt>kappa<span class="classifier">float, optional</span></dt><dd><p>Kappa parameter for the simulated neuron trees. Required if <cite>labels_dir</cite> is not provided.</p>
+</dd>
+<dt>random_start<span class="classifier">bool, optional</span></dt><dd><p>Whether to use random starting points for the simulated neuron trees. Required if <cite>labels_dir</cite> is not provided.</p>
+</dd>
+<dt>branches<span class="classifier">int, optional</span></dt><dd><p>Number of branches for the simulated neuron trees. Required if <cite>labels_dir</cite> is not provided.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Example input file contents to simulate neuron images from existing SWC files:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;labels_dir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/brysongray/data/neuromorpho_sub1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;out&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/brysongray/data/simulated_neurons/neuromorpho_sub1_with_artifacts&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;noise&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;binary&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;random_contrast&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;dropout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;random_brightness&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;seed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Example input file contents to generate neuron images de novo:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;out&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/brysongray/data/simulated_neurons/3d_no_artifacts_b-1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;stepsize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;noise&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uniform_len&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;kappa&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">20.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;random_start&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;binary&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;branches&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;random_contrast&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;dropout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;random_brightness&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;seed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="collect-branch-data-py">
+<h3>collect_branch_data.py<a class="headerlink" href="#collect-branch-data-py" title="Link to this heading"></a></h3>
+<p>Collects neuron image patches and branch labels. Recognizes the following command-line arguments:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>-l, –labels<span class="classifier">str</span></dt><dd><p>Path to labels directory (contains swc files).</p>
+</dd>
+<dt>-i, –images<span class="classifier">str</span></dt><dd><p>Path to images directory.</p>
+</dd>
+<dt>-o, –out<span class="classifier">str</span></dt><dd><p>Path to output directory.</p>
+</dd>
+<dt>-n, –name<span class="classifier">str</span></dt><dd><p>Output filename base.</p>
+</dd>
+<dt>-a, –adjust<span class="classifier">bool</span></dt><dd><p>Set to true if neuron coordinates were rescaled to draw images.</p>
+</dd>
+<dt>–n_samples<span class="classifier">int</span></dt><dd><p>Number of samples to collect from each image file.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>bin/collect_branch_data<span class="w"> </span>--labels<span class="w"> </span>/PATH/TO/LABELS/FOLDER<span class="w"> </span>--images<span class="w"> </span>/PATH/TO/IMAGES/FOLDER<span class="w"> </span>--out<span class="w"> </span>/PATH/TO/OUTPUTS/FOLDER<span class="w">  </span>--name<span class="w"> </span>example_name<span class="w"> </span>--adjust<span class="w"> </span>--n_samples<span class="w"> </span><span class="m">50</span>
+</pre></div>
+</div>
+</section>
+<section id="classifier-train-py">
+<h3>classifier_train.py<a class="headerlink" href="#classifier-train-py" title="Link to this heading"></a></h3>
+<p>Main function to train the branch classifier model. Recognizes the following command-line argumennts:</p>
+<blockquote>
+<div><p>-s, –source: Source directory containing labels as csv files and input images folder (observations).
+-o, –out: Path to output directory.
+-l, –learning_rate: Optimizer learning rate.
+-N, –epochs: Number of training epochs.</p>
+</div></blockquote>
+<p>For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>bin/classifier_train<span class="w"> </span>--source<span class="w"> </span>/PATH/TO/SOURCE/FOLDER<span class="w"> </span>--out<span class="w"> </span>/PATH/TO/OUTPUT/FOLDER<span class="w"> </span>--learning_rate<span class="w"> </span><span class="m">0</span>.001<span class="w"> </span>--epochs<span class="w"> </span><span class="m">25</span>
+</pre></div>
+</div>
+</section>
+<section id="sac-train-py">
+<h3>sac_train.py<a class="headerlink" href="#sac-train-py" title="Link to this heading"></a></h3>
+<p>Main function to train a Soft Actor-Critic (SAC) model for tractography.
+This function parses input parameters from a JSON file, initializes the environment,
+neural network models, optimizers, and other necessary components, and then trains
+the SAC model using the specified parameters.</p>
+<p>To run SAC training run the following command from the neurotrack root directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>bin/sac_train<span class="w"> </span>--input<span class="w"> </span>&lt;input_file&gt;
+</pre></div>
+</div>
+<p>The <cite>input</cite> argument is a JSON file listing the following configuration parameters:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>img_path<span class="classifier">str</span></dt><dd><p>Path to the input image.</p>
+</dd>
+<dt>outdir<span class="classifier">str</span></dt><dd><p>Directory to save output results.</p>
+</dd>
+<dt>name<span class="classifier">str</span></dt><dd><p>Name for the training session.</p>
+</dd>
+<dt>step_size<span class="classifier">float, optional</span></dt><dd><p>Step size for the environment (default is 1.0).</p>
+</dd>
+<dt>step_width<span class="classifier">float, optional</span></dt><dd><p>Step width for the environment (default is 1.0).</p>
+</dd>
+<dt>batchsize<span class="classifier">int, optional</span></dt><dd><p>Batch size for training (default is 256).</p>
+</dd>
+<dt>tau<span class="classifier">float, optional</span></dt><dd><p>Soft update parameter for target networks (default is 0.005).</p>
+</dd>
+<dt>gamma<span class="classifier">float, optional</span></dt><dd><p>Discount factor for future rewards (default is 0.99).</p>
+</dd>
+<dt>lr<span class="classifier">float, optional</span></dt><dd><p>Learning rate for optimizers (default is 0.001).</p>
+</dd>
+<dt>alpha<span class="classifier">float, optional</span></dt><dd><p>The weight applied to the accuracy component of reward. (default is 1.0).</p>
+</dd>
+<dt>beta<span class="classifier">float, optional</span></dt><dd><p>The weight applied to the reward prior (default is 1e-3).</p>
+</dd>
+<dt>friction<span class="classifier">float, optional</span></dt><dd><p>Weight applied to the friction component of reward (default is 1e-4).</p>
+</dd>
+<dt>n_episodes<span class="classifier">int, optional</span></dt><dd><p>Number of training episodes (default is 100).</p>
+</dd>
+<dt>init_temperature<span class="classifier">float, optional</span></dt><dd><p>Initial temperature for SAC entropy (default is 0.005).</p>
+</dd>
+<dt>target_entropy<span class="classifier">float, optional</span></dt><dd><p>Target entropy for SAC (default is 0.0).</p>
+</dd>
+<dt>classifier_weights<span class="classifier">str, optional</span></dt><dd><p>Path to pre-trained classifier weights.</p>
+</dd>
+<dt>sac_weights<span class="classifier">str, optional</span></dt><dd><p>Path to pre-trained SAC model weights.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Example input file contents to train the tracking model:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="nt">&quot;img_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/brysongray/tractography/data_prep/training_data/neuromorpho_with_artifacts&quot;</span><span class="p">,</span>
+<span class="nt">&quot;outdir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/brysongray/tractography/sac_training_output_test&quot;</span><span class="p">,</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;neuromorpho_dataset&quot;</span><span class="p">,</span>
+<span class="nt">&quot;classifier_weights&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/brysongray/tractography/pretrained_models/neuromorpho_with_artifacts_classifier/resnet_classifier_01-24-25_checkpoint-16.pt&quot;</span><span class="p">,</span>
+<span class="nt">&quot;sac_weights&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/brysongray/tractography/outputs_test/model_state_dicts_neuromorpho_with_artifacts_01-25-25.pt&quot;</span><span class="p">,</span>
+<span class="nt">&quot;n_seeds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="nt">&quot;step_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span>
+<span class="nt">&quot;step_width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span>
+<span class="nt">&quot;batch_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span>
+<span class="nt">&quot;tau&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.005</span><span class="p">,</span>
+<span class="nt">&quot;gamma&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
+<span class="nt">&quot;lr&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001</span><span class="p">,</span>
+<span class="nt">&quot;alpha&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
+<span class="nt">&quot;beta&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span>
+<span class="nt">&quot;friction&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="nt">&quot;n_episodes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+<span class="nt">&quot;init_temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.005</span><span class="p">,</span>
+<span class="nt">&quot;target_entropy&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="examples.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Bryson Gray, Daniel Tward.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

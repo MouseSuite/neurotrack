@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tractography &mdash; Neurotrack 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Neurotrack
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Neurotrack</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">tractography</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tractography">
+<h1>tractography<a class="headerlink" href="#tractography" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data_prep.html">data_prep package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data_prep.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_prep.html#module-data_prep.collect">data_prep.collect module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data_prep.html#data_prep.collect.collect_data"><code class="docutils literal notranslate"><span class="pre">collect_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_prep.html#data_prep.collect.swc_random_points"><code class="docutils literal notranslate"><span class="pre">swc_random_points()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="data_prep.html#module-data_prep.data_utils">data_prep.data_utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data_prep.html#data_prep.data_utils.interp"><code class="docutils literal notranslate"><span class="pre">interp()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="data_prep.html#module-data_prep.draw">data_prep.draw module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data_prep.html#data_prep.draw.draw_neuron"><code class="docutils literal notranslate"><span class="pre">draw_neuron()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_prep.html#data_prep.draw.draw_neuron_density"><code class="docutils literal notranslate"><span class="pre">draw_neuron_density()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_prep.html#data_prep.draw.draw_neuron_mask"><code class="docutils literal notranslate"><span class="pre">draw_neuron_mask()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_prep.html#data_prep.draw.draw_path"><code class="docutils literal notranslate"><span class="pre">draw_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_prep.html#data_prep.draw.draw_section_labels"><code class="docutils literal notranslate"><span class="pre">draw_section_labels()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_prep.html#data_prep.draw.neuron_from_swc"><code class="docutils literal notranslate"><span class="pre">neuron_from_swc()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="data_prep.html#module-data_prep.generate">data_prep.generate module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data_prep.html#data_prep.generate.get_next_point"><code class="docutils literal notranslate"><span class="pre">get_next_point()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_prep.html#data_prep.generate.get_path"><code class="docutils literal notranslate"><span class="pre">get_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_prep.html#data_prep.generate.make_swc_list"><code class="docutils literal notranslate"><span class="pre">make_swc_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_prep.html#data_prep.generate.save_images_from_swc"><code class="docutils literal notranslate"><span class="pre">save_images_from_swc()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="data_prep.html#module-data_prep.image">data_prep.image module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data_prep.html#data_prep.image.Image"><code class="docutils literal notranslate"><span class="pre">Image</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="data_prep.html#data_prep.image.Image.crop"><code class="docutils literal notranslate"><span class="pre">Image.crop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="data_prep.html#data_prep.image.Image.draw_line_segment"><code class="docutils literal notranslate"><span class="pre">Image.draw_line_segment()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="data_prep.html#data_prep.image.Image.draw_point"><code class="docutils literal notranslate"><span class="pre">Image.draw_point()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="data_prep.html#data_prep.image.draw_line_segment"><code class="docutils literal notranslate"><span class="pre">draw_line_segment()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="data_prep.html#module-data_prep.load">data_prep.load module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data_prep.html#data_prep.load.parse_swc_list"><code class="docutils literal notranslate"><span class="pre">parse_swc_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_prep.html#data_prep.load.swc"><code class="docutils literal notranslate"><span class="pre">swc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_prep.html#data_prep.load.tiff"><code class="docutils literal notranslate"><span class="pre">tiff()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="data_prep.html#module-data_prep">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="environments.html">environments package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="environments.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environments.html#module-environments.env_utils">environments.env_utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environments.html#environments.env_utils.binary_matching_error"><code class="docutils literal notranslate"><span class="pre">binary_matching_error()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="environments.html#environments.env_utils.density_error_change"><code class="docutils literal notranslate"><span class="pre">density_error_change()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="environments.html#environments.env_utils.plot_durations"><code class="docutils literal notranslate"><span class="pre">plot_durations()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="environments.html#environments.env_utils.plot_returns"><code class="docutils literal notranslate"><span class="pre">plot_returns()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="environments.html#module-environments.sac_tracking_env">environments.sac_tracking_env module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environments.html#environments.sac_tracking_env.Environment"><code class="docutils literal notranslate"><span class="pre">Environment</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="environments.html#environments.sac_tracking_env.Environment.get_reward"><code class="docutils literal notranslate"><span class="pre">Environment.get_reward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environments.html#environments.sac_tracking_env.Environment.get_state"><code class="docutils literal notranslate"><span class="pre">Environment.get_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environments.html#environments.sac_tracking_env.Environment.reset"><code class="docutils literal notranslate"><span class="pre">Environment.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environments.html#environments.sac_tracking_env.Environment.step"><code class="docutils literal notranslate"><span class="pre">Environment.step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="environments.html#module-environments">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="memory.html">memory package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="memory.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memory.html#module-memory.buffer">memory.buffer module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="memory.html#memory.buffer.PrioritizedReplayBuffer"><code class="docutils literal notranslate"><span class="pre">PrioritizedReplayBuffer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.PrioritizedReplayBuffer.eps"><code class="docutils literal notranslate"><span class="pre">PrioritizedReplayBuffer.eps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.PrioritizedReplayBuffer.alpha"><code class="docutils literal notranslate"><span class="pre">PrioritizedReplayBuffer.alpha</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.PrioritizedReplayBuffer.beta"><code class="docutils literal notranslate"><span class="pre">PrioritizedReplayBuffer.beta</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.PrioritizedReplayBuffer.max_priority"><code class="docutils literal notranslate"><span class="pre">PrioritizedReplayBuffer.max_priority</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.PrioritizedReplayBuffer.tree"><code class="docutils literal notranslate"><span class="pre">PrioritizedReplayBuffer.tree</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.PrioritizedReplayBuffer.obs"><code class="docutils literal notranslate"><span class="pre">PrioritizedReplayBuffer.obs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.PrioritizedReplayBuffer.actions"><code class="docutils literal notranslate"><span class="pre">PrioritizedReplayBuffer.actions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.PrioritizedReplayBuffer.next_obs"><code class="docutils literal notranslate"><span class="pre">PrioritizedReplayBuffer.next_obs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.PrioritizedReplayBuffer.rewards"><code class="docutils literal notranslate"><span class="pre">PrioritizedReplayBuffer.rewards</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.PrioritizedReplayBuffer.dones"><code class="docutils literal notranslate"><span class="pre">PrioritizedReplayBuffer.dones</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.PrioritizedReplayBuffer.idx"><code class="docutils literal notranslate"><span class="pre">PrioritizedReplayBuffer.idx</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.PrioritizedReplayBuffer.full"><code class="docutils literal notranslate"><span class="pre">PrioritizedReplayBuffer.full</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.PrioritizedReplayBuffer.capacity"><code class="docutils literal notranslate"><span class="pre">PrioritizedReplayBuffer.capacity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.PrioritizedReplayBuffer.push"><code class="docutils literal notranslate"><span class="pre">PrioritizedReplayBuffer.push()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.PrioritizedReplayBuffer.sample"><code class="docutils literal notranslate"><span class="pre">PrioritizedReplayBuffer.sample()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.PrioritizedReplayBuffer.update_priorities"><code class="docutils literal notranslate"><span class="pre">PrioritizedReplayBuffer.update_priorities()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="memory.html#memory.buffer.ReplayBuffer"><code class="docutils literal notranslate"><span class="pre">ReplayBuffer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.ReplayBuffer.obs"><code class="docutils literal notranslate"><span class="pre">ReplayBuffer.obs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.ReplayBuffer.actions"><code class="docutils literal notranslate"><span class="pre">ReplayBuffer.actions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.ReplayBuffer.next_obs"><code class="docutils literal notranslate"><span class="pre">ReplayBuffer.next_obs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.ReplayBuffer.rewards"><code class="docutils literal notranslate"><span class="pre">ReplayBuffer.rewards</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.ReplayBuffer.dones"><code class="docutils literal notranslate"><span class="pre">ReplayBuffer.dones</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.ReplayBuffer.idx"><code class="docutils literal notranslate"><span class="pre">ReplayBuffer.idx</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.ReplayBuffer.full"><code class="docutils literal notranslate"><span class="pre">ReplayBuffer.full</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.ReplayBuffer.capacity"><code class="docutils literal notranslate"><span class="pre">ReplayBuffer.capacity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.ReplayBuffer.push"><code class="docutils literal notranslate"><span class="pre">ReplayBuffer.push()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.buffer.ReplayBuffer.sample"><code class="docutils literal notranslate"><span class="pre">ReplayBuffer.sample()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="memory.html#module-memory.tree">memory.tree module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="memory.html#memory.tree.SumTree"><code class="docutils literal notranslate"><span class="pre">SumTree</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.tree.SumTree.nodes"><code class="docutils literal notranslate"><span class="pre">SumTree.nodes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.tree.SumTree.data"><code class="docutils literal notranslate"><span class="pre">SumTree.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.tree.SumTree.size"><code class="docutils literal notranslate"><span class="pre">SumTree.size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.tree.SumTree.count"><code class="docutils literal notranslate"><span class="pre">SumTree.count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.tree.SumTree.real_size"><code class="docutils literal notranslate"><span class="pre">SumTree.real_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.tree.SumTree.add"><code class="docutils literal notranslate"><span class="pre">SumTree.add()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.tree.SumTree.get"><code class="docutils literal notranslate"><span class="pre">SumTree.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.tree.SumTree.total"><code class="docutils literal notranslate"><span class="pre">SumTree.total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="memory.html#memory.tree.SumTree.update"><code class="docutils literal notranslate"><span class="pre">SumTree.update()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="memory.html#module-memory">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">models package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="models.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#module-models.cnn">models.cnn module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#models.cnn.ConvNet"><code class="docutils literal notranslate"><span class="pre">ConvNet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#models.cnn.ConvNet.forward"><code class="docutils literal notranslate"><span class="pre">ConvNet.forward()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#module-models.resblock">models.resblock module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#models.resblock.ResidualBlock"><code class="docutils literal notranslate"><span class="pre">ResidualBlock</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#models.resblock.ResidualBlock.forward"><code class="docutils literal notranslate"><span class="pre">ResidualBlock.forward()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#module-models.resnet">models.resnet module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#models.resnet.ResNet"><code class="docutils literal notranslate"><span class="pre">ResNet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#models.resnet.ResNet.forward"><code class="docutils literal notranslate"><span class="pre">ResNet.forward()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#module-models">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plot.html">plot package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plot.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html#module-plot.show_state">plot.show_state module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="plot.html#plot.show_state.show_state"><code class="docutils literal notranslate"><span class="pre">show_state()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html#module-plot.tracking_interface">plot.tracking_interface module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="plot.html#plot.tracking_interface.manual_step"><code class="docutils literal notranslate"><span class="pre">manual_step()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot.html#plot.tracking_interface.show_state"><code class="docutils literal notranslate"><span class="pre">show_state()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html#module-plot">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="solvers.html">solvers package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="solvers.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solvers.html#module-solvers.branch_classifier">solvers.branch_classifier module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="solvers.html#solvers.branch_classifier.StateData"><code class="docutils literal notranslate"><span class="pre">StateData</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="solvers.html#solvers.branch_classifier.StateData.img_labels"><code class="docutils literal notranslate"><span class="pre">StateData.img_labels</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="solvers.html#solvers.branch_classifier.StateData.img_dir"><code class="docutils literal notranslate"><span class="pre">StateData.img_dir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="solvers.html#solvers.branch_classifier.StateData.transform"><code class="docutils literal notranslate"><span class="pre">StateData.transform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="solvers.html#solvers.branch_classifier.StateData.target_transform"><code class="docutils literal notranslate"><span class="pre">StateData.target_transform</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="solvers.html#solvers.branch_classifier.init_dataloader"><code class="docutils literal notranslate"><span class="pre">init_dataloader()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="solvers.html#solvers.branch_classifier.test_loop"><code class="docutils literal notranslate"><span class="pre">test_loop()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="solvers.html#solvers.branch_classifier.train"><code class="docutils literal notranslate"><span class="pre">train()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="solvers.html#solvers.branch_classifier.train_loop"><code class="docutils literal notranslate"><span class="pre">train_loop()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="solvers.html#solvers.branch_classifier.transform"><code class="docutils literal notranslate"><span class="pre">transform()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="solvers.html#module-solvers.sac">solvers.sac module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="solvers.html#solvers.sac.inference"><code class="docutils literal notranslate"><span class="pre">inference()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="solvers.html#solvers.sac.sample_from_output"><code class="docutils literal notranslate"><span class="pre">sample_from_output()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="solvers.html#solvers.sac.target_update"><code class="docutils literal notranslate"><span class="pre">target_update()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="solvers.html#solvers.sac.train"><code class="docutils literal notranslate"><span class="pre">train()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="solvers.html#solvers.sac.update_Q"><code class="docutils literal notranslate"><span class="pre">update_Q()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="solvers.html#solvers.sac.update_actor"><code class="docutils literal notranslate"><span class="pre">update_actor()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="solvers.html#module-solvers">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Bryson Gray, Daniel Tward.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

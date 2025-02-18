@@ -1,0 +1,569 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>memory package &mdash; Neurotrack 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Neurotrack
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Neurotrack</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">memory package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/memory.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="memory-package">
+<h1>memory package<a class="headerlink" href="#memory-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-memory.buffer">
+<span id="memory-buffer-module"></span><h2>memory.buffer module<a class="headerlink" href="#module-memory.buffer" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="memory.buffer.PrioritizedReplayBuffer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">memory.buffer.</span></span><span class="sig-name descname"><span class="pre">PrioritizedReplayBuffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capacity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.buffer.PrioritizedReplayBuffer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A buffer for storing and sampling transitions with prioritized experience replay.
+Reference: <a class="reference external" href="https://github.com/Howuhh/prioritized_experience_replay.git">https://github.com/Howuhh/prioritized_experience_replay.git</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>capacity</strong> (<em>int</em>) – The maximum number of transitions that the buffer can hold.</p></li>
+<li><p><strong>obs_shape</strong> (<em>tuple</em>) – The shape of the observation space.</p></li>
+<li><p><strong>action_shape</strong> (<em>tuple</em>) – The shape of the action space.</p></li>
+<li><p><strong>eps</strong> (<em>float</em><em>, </em><em>optional</em>) – A small positive constant to prevent zero priority, by default 1e-2.</p></li>
+<li><p><strong>alpha</strong> (<em>float</em><em>, </em><em>optional</em>) – The exponent used in prioritization, by default 0.1.</p></li>
+<li><p><strong>beta</strong> (<em>float</em><em>, </em><em>optional</em>) – The exponent used in importance sampling weights, by default 0.1.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.PrioritizedReplayBuffer.eps">
+<span class="sig-name descname"><span class="pre">eps</span></span><a class="headerlink" href="#memory.buffer.PrioritizedReplayBuffer.eps" title="Link to this definition"></a></dt>
+<dd><p>A small positive constant to prevent zero priority.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.PrioritizedReplayBuffer.alpha">
+<span class="sig-name descname"><span class="pre">alpha</span></span><a class="headerlink" href="#memory.buffer.PrioritizedReplayBuffer.alpha" title="Link to this definition"></a></dt>
+<dd><p>The exponent used in prioritization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.PrioritizedReplayBuffer.beta">
+<span class="sig-name descname"><span class="pre">beta</span></span><a class="headerlink" href="#memory.buffer.PrioritizedReplayBuffer.beta" title="Link to this definition"></a></dt>
+<dd><p>The exponent used in importance sampling weights.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.PrioritizedReplayBuffer.max_priority">
+<span class="sig-name descname"><span class="pre">max_priority</span></span><a class="headerlink" href="#memory.buffer.PrioritizedReplayBuffer.max_priority" title="Link to this definition"></a></dt>
+<dd><p>The maximum priority in the buffer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.PrioritizedReplayBuffer.tree">
+<span class="sig-name descname"><span class="pre">tree</span></span><a class="headerlink" href="#memory.buffer.PrioritizedReplayBuffer.tree" title="Link to this definition"></a></dt>
+<dd><p>A sum tree data structure for efficient sampling and updating of priorities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#memory.tree.SumTree" title="memory.tree.SumTree">SumTree</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.PrioritizedReplayBuffer.obs">
+<span class="sig-name descname"><span class="pre">obs</span></span><a class="headerlink" href="#memory.buffer.PrioritizedReplayBuffer.obs" title="Link to this definition"></a></dt>
+<dd><p>A tensor to store observations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.PrioritizedReplayBuffer.actions">
+<span class="sig-name descname"><span class="pre">actions</span></span><a class="headerlink" href="#memory.buffer.PrioritizedReplayBuffer.actions" title="Link to this definition"></a></dt>
+<dd><p>A tensor to store actions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.PrioritizedReplayBuffer.next_obs">
+<span class="sig-name descname"><span class="pre">next_obs</span></span><a class="headerlink" href="#memory.buffer.PrioritizedReplayBuffer.next_obs" title="Link to this definition"></a></dt>
+<dd><p>A tensor to store next observations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.PrioritizedReplayBuffer.rewards">
+<span class="sig-name descname"><span class="pre">rewards</span></span><a class="headerlink" href="#memory.buffer.PrioritizedReplayBuffer.rewards" title="Link to this definition"></a></dt>
+<dd><p>A tensor to store rewards.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.PrioritizedReplayBuffer.dones">
+<span class="sig-name descname"><span class="pre">dones</span></span><a class="headerlink" href="#memory.buffer.PrioritizedReplayBuffer.dones" title="Link to this definition"></a></dt>
+<dd><p>A tensor to store done flags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.PrioritizedReplayBuffer.idx">
+<span class="sig-name descname"><span class="pre">idx</span></span><a class="headerlink" href="#memory.buffer.PrioritizedReplayBuffer.idx" title="Link to this definition"></a></dt>
+<dd><p>The current index for inserting new transitions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.PrioritizedReplayBuffer.full">
+<span class="sig-name descname"><span class="pre">full</span></span><a class="headerlink" href="#memory.buffer.PrioritizedReplayBuffer.full" title="Link to this definition"></a></dt>
+<dd><p>A flag indicating whether the buffer is full.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.PrioritizedReplayBuffer.capacity">
+<span class="sig-name descname"><span class="pre">capacity</span></span><a class="headerlink" href="#memory.buffer.PrioritizedReplayBuffer.capacity" title="Link to this definition"></a></dt>
+<dd><p>The maximum number of transitions that the buffer can hold.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="memory.buffer.PrioritizedReplayBuffer.push">
+<span class="sig-name descname"><span class="pre">push</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">next_obs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">done</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.buffer.PrioritizedReplayBuffer.push" title="Link to this definition"></a></dt>
+<dd><p>Add a new experience to the buffer.
+:param obs: The current observation.
+:type obs: object
+:param action: The action taken.
+:type action: object
+:param next_obs: The next observation after taking the action.
+:type next_obs: object
+:param reward: The reward received after taking the action.
+:type reward: float
+:param done: Whether the episode has ended.
+:type done: bool</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="memory.buffer.PrioritizedReplayBuffer.sample">
+<span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.buffer.PrioritizedReplayBuffer.sample" title="Link to this definition"></a></dt>
+<dd><p>Samples a batch of transitions from the buffer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>batch_size</strong> (<em>int</em>) – The number of transitions to sample.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>obs</strong> (<em>torch.Tensor</em>) – The observations of the sampled transitions.</p></li>
+<li><p><strong>actions</strong> (<em>torch.Tensor</em>) – The actions of the sampled transitions.</p></li>
+<li><p><strong>next_obs</strong> (<em>torch.Tensor</em>) – The next observations of the sampled transitions.</p></li>
+<li><p><strong>rewards</strong> (<em>torch.Tensor</em>) – The rewards of the sampled transitions.</p></li>
+<li><p><strong>dones</strong> (<em>torch.Tensor</em>) – The done flags of the sampled transitions.</p></li>
+<li><p><strong>weights</strong> (<em>torch.Tensor</em>) – The importance sampling weights of the sampled transitions.</p></li>
+<li><p><strong>tree_idxs</strong> (<em>list of int</em>) – The indices of the sampled transitions in the priority tree.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>AssertionError</strong> – If the buffer contains fewer samples than the requested batch size.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="memory.buffer.PrioritizedReplayBuffer.update_priorities">
+<span class="sig-name descname"><span class="pre">update_priorities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_idxs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priorities</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.buffer.PrioritizedReplayBuffer.update_priorities" title="Link to this definition"></a></dt>
+<dd><p>Update the priorities of the given data indices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_idxs</strong> (<em>array-like</em>) – Indices of the data whose priorities are to be updated.</p></li>
+<li><p><strong>priorities</strong> (<em>array-like</em><em> or </em><em>torch.Tensor</em>) – New priorities for the data indices. If a torch.Tensor is provided, it will be converted to a numpy array.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The priorities are updated using the formula p_i = (<a href="#id1"><span class="problematic" id="id2">|q_i|</span></a> + eps) ** alpha, where eps is a small positive constant
+to prevent edge cases where priority is zero, and alpha is a scaling factor. The maximum priority is also updated accordingly.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="memory.buffer.ReplayBuffer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">memory.buffer.</span></span><span class="sig-name descname"><span class="pre">ReplayBuffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capacity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.buffer.ReplayBuffer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A buffer to store and sample transitions for reinforcement learning.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>capacity</strong> (<em>int</em>) – The maximum number of transitions that the buffer can hold.</p></li>
+<li><p><strong>obs_shape</strong> (<em>tuple</em>) – The shape of the observation space.</p></li>
+<li><p><strong>action_shape</strong> (<em>tuple</em>) – The shape of the action space.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.ReplayBuffer.obs">
+<span class="sig-name descname"><span class="pre">obs</span></span><a class="headerlink" href="#memory.buffer.ReplayBuffer.obs" title="Link to this definition"></a></dt>
+<dd><p>Tensor to store observations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.ReplayBuffer.actions">
+<span class="sig-name descname"><span class="pre">actions</span></span><a class="headerlink" href="#memory.buffer.ReplayBuffer.actions" title="Link to this definition"></a></dt>
+<dd><p>Tensor to store actions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.ReplayBuffer.next_obs">
+<span class="sig-name descname"><span class="pre">next_obs</span></span><a class="headerlink" href="#memory.buffer.ReplayBuffer.next_obs" title="Link to this definition"></a></dt>
+<dd><p>Tensor to store next observations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.ReplayBuffer.rewards">
+<span class="sig-name descname"><span class="pre">rewards</span></span><a class="headerlink" href="#memory.buffer.ReplayBuffer.rewards" title="Link to this definition"></a></dt>
+<dd><p>Tensor to store rewards.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.ReplayBuffer.dones">
+<span class="sig-name descname"><span class="pre">dones</span></span><a class="headerlink" href="#memory.buffer.ReplayBuffer.dones" title="Link to this definition"></a></dt>
+<dd><p>Tensor to store done flags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.ReplayBuffer.idx">
+<span class="sig-name descname"><span class="pre">idx</span></span><a class="headerlink" href="#memory.buffer.ReplayBuffer.idx" title="Link to this definition"></a></dt>
+<dd><p>The current index for storing the next transition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.ReplayBuffer.full">
+<span class="sig-name descname"><span class="pre">full</span></span><a class="headerlink" href="#memory.buffer.ReplayBuffer.full" title="Link to this definition"></a></dt>
+<dd><p>Flag indicating if the buffer is full.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.buffer.ReplayBuffer.capacity">
+<span class="sig-name descname"><span class="pre">capacity</span></span><a class="headerlink" href="#memory.buffer.ReplayBuffer.capacity" title="Link to this definition"></a></dt>
+<dd><p>The maximum number of transitions that the buffer can hold.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="memory.buffer.ReplayBuffer.push">
+<span class="sig-name descname"><span class="pre">push</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">next_obs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">done</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.buffer.ReplayBuffer.push" title="Link to this definition"></a></dt>
+<dd><p>Save a transition to replay memory</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="memory.buffer.ReplayBuffer.sample">
+<span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replacement</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.buffer.ReplayBuffer.sample" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-memory.tree">
+<span id="memory-tree-module"></span><h2>memory.tree module<a class="headerlink" href="#module-memory.tree" title="Link to this heading"></a></h2>
+<p>Reference: <a class="reference external" href="https://github.com/Howuhh/prioritized_experience_replay.git">https://github.com/Howuhh/prioritized_experience_replay.git</a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="memory.tree.SumTree">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">memory.tree.</span></span><span class="sig-name descname"><span class="pre">SumTree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.tree.SumTree" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A binary tree data structure where the value of each node is the sum of the values of its children.
+It is used to store and efficiently retrieve cumulative sums.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>size</strong> (<em>int</em>) – The size of the data array.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.tree.SumTree.nodes">
+<span class="sig-name descname"><span class="pre">nodes</span></span><a class="headerlink" href="#memory.tree.SumTree.nodes" title="Link to this definition"></a></dt>
+<dd><p>The list of nodes in the tree, where each node is the sum of its children.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.tree.SumTree.data">
+<span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#memory.tree.SumTree.data" title="Link to this definition"></a></dt>
+<dd><p>The list of data items corresponding to the leaf nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.tree.SumTree.size">
+<span class="sig-name descname"><span class="pre">size</span></span><a class="headerlink" href="#memory.tree.SumTree.size" title="Link to this definition"></a></dt>
+<dd><p>The size of the data array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.tree.SumTree.count">
+<span class="sig-name descname"><span class="pre">count</span></span><a class="headerlink" href="#memory.tree.SumTree.count" title="Link to this definition"></a></dt>
+<dd><p>The current count of added elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="memory.tree.SumTree.real_size">
+<span class="sig-name descname"><span class="pre">real_size</span></span><a class="headerlink" href="#memory.tree.SumTree.real_size" title="Link to this definition"></a></dt>
+<dd><p>The actual number of elements in the tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="memory.tree.SumTree.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.tree.SumTree.add" title="Link to this definition"></a></dt>
+<dd><p>Add a value and associated data to the tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>any</em>) – The value to be added.</p></li>
+<li><p><strong>data</strong> (<em>any</em>) – The data associated with the value.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This method updates the internal data structure with the given value and data,
+increments the count, and adjusts the real size of the tree.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="memory.tree.SumTree.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cumsum</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.tree.SumTree.get" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="memory.tree.SumTree.total">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">total</span></span><a class="headerlink" href="#memory.tree.SumTree.total" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="memory.tree.SumTree.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.tree.SumTree.update" title="Link to this definition"></a></dt>
+<dd><p>Update the value at a specific index and propagate the change up the tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_idx</strong> (<em>int</em>) – The index of the data to be updated.</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – The new value to be set at the specified index.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This method updates the value at the given index and adjusts the parent nodes
+to reflect the change in the tree structure.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-memory">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-memory" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Bryson Gray, Daniel Tward.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
